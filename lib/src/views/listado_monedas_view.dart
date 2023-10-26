@@ -83,8 +83,8 @@ Widget build(BuildContext context) {
                ),
              ),
             SizedBox(height: 20),
-            RowMoneda(),
-            RowMoneda(),
+            RowMoneda(texto: 'Moneda 1',),
+            RowMoneda(texto: 'Moneda 2',),
             
           ],
         
@@ -95,8 +95,10 @@ Widget build(BuildContext context) {
 }
 
 class RowMoneda extends StatelessWidget {
+
+  final String texto;
   const RowMoneda({
-    super.key,
+    super.key, required this.texto,
   });
 
   @override
@@ -106,11 +108,11 @@ class RowMoneda extends StatelessWidget {
                 context.push(GorouterConfiguracion.detalle);
                 // print("Deberia Navegar");
               },
-      child: const Row(
+      child:  Row(
         children: [
-          Text('Moneda 1'),
-          SizedBox(width: 10),
-           Icon(
+          Text(texto),
+           const SizedBox(width: 10),
+           const Icon(
            Icons.attach_money
           ),
           // Text('Pagina Principal '),

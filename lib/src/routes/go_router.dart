@@ -7,6 +7,7 @@ import 'package:hackathon_mobile/src/views/detalle_moneda_view.dart';
 import 'package:hackathon_mobile/src/views/home_page.dart';
 import 'package:hackathon_mobile/src/views/home_view.dart';
 import 'package:hackathon_mobile/src/views/listado_monedas_view.dart';
+import 'package:hackathon_mobile/src/views/splash_view.dart';
 
 class GorouterConfiguracion {
   //Rutas gorouter
@@ -17,6 +18,8 @@ class GorouterConfiguracion {
   static String listadoMonedas = '/listado_monedas_view';
 
   static String detalle = '/detalle';
+
+  static String splash = '/splash';
 
   static String noPageFound = '/404';
 
@@ -56,6 +59,12 @@ static GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(de
               path: detalle,
               builder:  (BuildContext context, GoRouterState state) {
                  return const DetalleMonedaView();
+              },
+            ),
+            GoRoute(
+              path: splash,
+              builder:  (BuildContext context, GoRouterState state) {
+                 return const SplashView();
               },
             ),
           ],

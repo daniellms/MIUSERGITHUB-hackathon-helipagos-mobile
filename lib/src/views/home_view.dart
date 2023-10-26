@@ -18,20 +18,42 @@ Widget build(BuildContext context) {
           onTap: () {
             context.push(GorouterConfiguracion.listadoMonedas);
           },
-          child: const Row(
-            children: [
-               Text(
-                'Listado de Monedas'
-              ),
-              SizedBox(width: 10),
-               Icon(
-               Icons.view_list_sharp
-              ),
-            ],
-          ),
+          child: const BotonesNavegacion(texto: 'Listado de Monedas',iconoData: Icons.list_alt_outlined,),
+        ),
+        const SizedBox(height: 10,),
+        InkWell(
+          onTap: () {
+            context.push(GorouterConfiguracion.splash);
+          },
+          child: const BotonesNavegacion(texto: 'Imagen de Presentacion ',iconoData: Icons.image),
         )
       ],
     ),
   );
+  }
+}
+
+class BotonesNavegacion extends StatelessWidget {
+
+  final String  texto;
+  final IconData iconoData;
+  // final String  text;
+  const BotonesNavegacion({
+    super.key,  required this.texto, required this.iconoData,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return  Row(
+      children: [
+         Text(
+          texto
+        ),
+       const  SizedBox(width: 10),
+          Icon(
+          iconoData
+        ),
+      ],
+    );
   }
 }
