@@ -13,25 +13,19 @@ Widget build(BuildContext context) {
     child: Container(
       padding:const  EdgeInsets.symmetric(horizontal: 10),
       color: Colors.grey,
-      child: SingleChildScrollView(
+      child: const SingleChildScrollView(
         child:  Column(
           children: [
-            const Text(
+             Text(
              'Detalle Moneda',
              style: TextStyle(
               color: Colors.black45,
               fontSize: 20
             )
             ),
-            InkWell(
-              // onTap: () {
-              //   // context.go(GorouterConfiguracion.detalle);
-              //   context.push(GorouterConfiguracion.home);
-              //   // print("Deberia Navegar");
-              // },
-              child: Container(
-                // color: Colors.blue,
-                child:  const RowMoneda())),
+             SizedBox(height: 10),
+
+             RowMoneda(),
             
           ],
         
@@ -50,7 +44,7 @@ class RowMoneda extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Text('Pagina Principal '),
+        Text('La Moneda'), ///[Aqui debo redibir mi clase en cuestion usando un bloc builder consumiendola del state]
         SizedBox(width: 10),
          Icon(
          Icons.attach_money
